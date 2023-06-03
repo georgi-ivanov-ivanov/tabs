@@ -5,9 +5,9 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ### ⚙️ Setup
 
 1. Clone the repository into a workdir.
-2. Inside the directory execute `nvm use 12`.
-3. Install node packages with `npm install`.
-4. In project root run `ng serve --open`.
+2. Inside the directory execute `node version 16`.
+3. Install Angular cli if you haven't `npm install -g @angular/cli`.
+4. Install node packages with `npm install`.
 
 ## Development server
 
