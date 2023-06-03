@@ -1,0 +1,52 @@
+@import "../variables.scss";
+
+.tab {
+  padding: 20px 0;
+  margin-bottom: 20px;
+
+  &__buttons {
+    flex: 1;
+    padding: 10px;
+    background-color: $color-primary;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    text-align: center;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:hover {
+      background-color: $hovered-color;
+      color: $color-primary;
+      transition: 0.2s linear;
+    }
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    @media screen and(min-width: $mobile) {
+      gap: 30px;
+      flex-direction: row;
+    }
+  }
+
+  &__buttons.active {
+    background-color: $hovered-color;
+    color: $color-primary;
+  }
+
+  &__content {
+    padding: 10px;
+  }
+
+  @media screen and(min-width: $sm) {
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+}

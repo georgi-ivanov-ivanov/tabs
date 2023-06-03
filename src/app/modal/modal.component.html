@@ -1,0 +1,7 @@
+<div class="modal" [ngClass]="{ open: showModal }">
+  <div class="modal__overlay" (click)="closeImageModal()"></div>
+  <div class="modal__content">
+    <img [src]="selectedImage" class="modal__image" alt="Selected Image" />
+    <button class="modal__close-btn" (click)="closeImageModal()">Close</button>
+  </div>
+</div>

@@ -1,0 +1,24 @@
+<form (ngSubmit)="applyFilter()">
+  <input
+    class="tab__input"
+    type="text"
+    name="filterInput"
+    [(ngModel)]="filterCriteria"
+    placeholder="Search"
+  />
+  <button type="submit" class="tab__button">apply</button>
+  <div class="tab-content">
+    <div
+      *ngFor="let item of filteredData; let i = index"
+      [attr.tabContent]="i + 1"
+    >
+      <img
+        class="tab-content__image"
+        (click)="openImageModal(item.image)"
+        [src]="item.image"
+        alt="Image"
+      />
+      <h3>{{ item.title }}</h3>
+    </div>
+  </div>
+</form>

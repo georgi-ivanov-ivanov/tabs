@@ -1,0 +1,71 @@
+@import "../variables.scss";
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 9999;
+
+  &.open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  &__image {
+    height: auto;
+    width: 320px;
+    object-fit: cover;
+
+    @media screen and (min-width: $sm) {
+      height: 600px;
+      width: 600px;
+    }
+  }
+
+  &__overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $modal-background;
+    z-index: -1;
+  }
+
+  &__content {
+    background-color: $color-primary;
+    padding: 20px;
+    border-radius: 4px;
+    max-width: 90%;
+    max-height: 90%;
+  }
+
+  &__close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 10px 35px;
+    background-color: $color-primary;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $hovered-color;
+      color: $color-primary;
+    }
+
+    @media screen and (min-width: $sm) {
+      top: 40px;
+      right: 40px;
+    }
+  }
+}

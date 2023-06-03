@@ -1,0 +1,36 @@
+<div class="tab">
+  <div class="tab__header">
+    <button
+      class="tab__buttons"
+      [class.active]="activeTab === 1"
+      (click)="activeTab = activeTab === 1 ? null : 1"
+    >
+      Nature
+    </button>
+    <button
+      class="tab__buttons"
+      [class.active]="activeTab === 2"
+      (click)="activeTab = activeTab === 2 ? null : 2"
+    >
+      Animals
+    </button>
+    <button
+      class="tab__buttons"
+      [class.active]="activeTab === 3"
+      (click)="selectTab(3)"
+    >
+      Cars
+    </button>
+  </div>
+  <div class="tab__content">
+    <ng-container *ngIf="activeTab === 1">
+      <ng-content select="[tabContent1]"></ng-content>
+    </ng-container>
+    <ng-container *ngIf="activeTab === 2">
+      <ng-content select="[tabContent2]"></ng-content>
+    </ng-container>
+    <ng-container *ngIf="activeTab === 3">
+      <ng-content select="[tabContent3]"></ng-content>
+    </ng-container>
+  </div>
+</div>

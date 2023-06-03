@@ -1,0 +1,62 @@
+@import "../variables.scss";
+
+.tab {
+  padding: 15px 0;
+
+  &__input {
+    border-radius: 10px;
+    background-color: $color-primary;
+    padding: 5px;
+    margin-right: 10px;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__button {
+    padding: 10px 20px;
+    background-color: $color-primary;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    text-align: center;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:hover {
+      background-color: $hovered-color;
+      color: $color-primary;
+      transition: 0.2s linear;
+    }
+  }
+
+  &-content {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 60px;
+    padding: 25px 0;
+
+    &__image {
+      max-height: 400px;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      cursor: pointer;
+    }
+
+    @media screen and (min-width: $tablet) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media screen and(min-width: $sm) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  @media screen and (min-width: $sm) {
+    padding: 30px 0;
+  }
+}
